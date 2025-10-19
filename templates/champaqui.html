@@ -3,13 +3,14 @@
 <head>  
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-  <title>Quienes somos - Nubes Blancas</title>  
+  <title>champaqui - Nubes Blancas</title>  
   <!-- Google Fonts -->  
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet"> 
+     <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <style>  
 
-    body {
+        body {
  background-image: url('imagenes/fondo_de_nube_blanca.jpeg');
   background-size: cover;
   background-position: center;
@@ -18,7 +19,95 @@
   margin: 0;
   min-height: 100vh;
   position: relative;
+        }
+    header {   
+    padding: 1px;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center; 
+    height: 600px;
+    background-color: var(--color-fuerte); 
+    } 
+
+
+
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  justify-content: flex-end; 
+}
+
+/* Título centrado con margen superior para enfatizar */
+
+       .titulo-seccion{
+      text-align: center;
+      color: #f3f9ff;
+      color: var(--color-acento);  
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-family: 'Pacifico', Georgia, 'Times New Roman', Times, serif;
+      position: relative;
+      z-index: 1;
+ }  
+/* Espacio adicional entre bloques si necesitas separar entre contenido */
+/* Separador horizontal que actúa como marco entre el h1 y el contenido */
+.separador {
+  width:100%;
+margin-left: 0%;
+  max-width: 500px;
+  height: 2px;
+  margin: 10px auto 40px 10px; /* centra la línea y le da espacio inferior */
+  border: none;
+  background: #0366f0; /* color gris neutro; ajusta a tu paleta */
+  border-radius: 2px;
+}
+
+/* Secciones separadas para claridad */
+.intro,
+.diferencia {
+  margin-bottom: 20px;
+}
+
+
+/* Opcional: estilizar párrafos dentro de las secciones para mejor legibilidad */
+.intro p,
+.diferencia p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #006aff;
+}
+
+
+:root {
+  --ancho-panel: 230px; /* ancho del panel lateral */
+}
+
+h2{
+        position: relative;
+      z-index: 1;
+    color:#a365e9;
+}
+h1{
+        position: relative;
+      z-index: 1;
+    color:
+    #88ff63;
+}
+h3{
+  position: relative;
+  z-index: 1;
+  display: inline-block;      /* para que los efectos de sombra se apliquen al texto */
+  color: #ffffff;               /* color de letra original */
+  font-family: inherit;
+  font-size: 1.2rem;
     }
+
     .overlay {
   position: fixed;      /* cubre toda la ventana sin afectar el flujo */
   top: 0;
@@ -35,85 +124,18 @@ main,header,img,.separador .contenedor {
   position: relative;
   z-index: 1;
 }
-    header {   
-    padding: 1px;  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center; 
-    height: 600px;
-    background-color: var(--color-fuerte); 
-    } 
-    /* Estructura y encabezado  
-    header h1 {  
-    font-family: 'Pacifico', cursive;  
-    color: #f3f9ff;  
-    margin: center;
-    padding: center;
-    }
 
-}*/ 
-/* Contenedor principal para centrar el título y separar secciones */
-.contenedor {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 16px;
-  display: flex;
-  flex-direction: column;
-  /* Altura ficticia para demostrar el borde inferior; ajusta según tu diseño real */
-  min-height: 70vh;
-  justify-content: flex-end; /* Empuja el contenido hacia el borde inferior del contenedor */
-}
-
-
-/* Título centrado con margen superior para enfatizar */
-
-
-/* Espacio adicional entre bloques si necesitas separar entre contenido */
-
-/* Separador horizontal que actúa como marco entre el h1 y el contenido */
-.separador {
-  width: 100%;
-  max-width: 600px;
-  height: 2px;
-  margin: 0 auto 40px auto; /* centra la línea y le da espacio inferior */
-  border: none;
-  background: #fafcff; /* color gris neutro; ajusta a tu paleta */
-  border-radius: 2px;
-}
-
-/* Secciones separadas para claridad */
-
-
-/* Opcional: estilizar párrafos dentro de las secciones para mejor legibilidad */
 .intro p{
   font-size: 1rem;
   line-height: 1.6;
   color: #ffffff;
   position: relative;
   z-index: 1;
+  
 }
 
-    .intro{  
-      font-family: inherit; 
-      color: #9782f3;  
-      text-align: center;
-      
-    }  
 
-
-   .titulo-seccion{
-      text-align: center;
-      color: #f3f9ff;
-      color: var(--color-acento);  
-      margin-top: 40px;
-      margin-bottom: 20px;
-      font-size: 2.5rem;
-      line-height: 1.2;
-  font-family: inherit;
-      position: relative;
-      z-index: 1;
- }  
- 
+    
 
      /* Imagen de perfil */  
 .logo-container {
@@ -152,10 +174,6 @@ transform-origin: center center;
 transition: transform 0.6s ease;
 }
 
-:root {
-  --ancho-panel: 230px; /* ancho del panel lateral */
-}
-
 /* Panel lateral deslizante */
 .menu-lateral {
   position: fixed;
@@ -178,12 +196,14 @@ transition: transform 0.6s ease;
 #opciones-salidas:not([hidden]) { display: block; }
 
 
-  </style>  
-</head>  
+
+
+</style>
 <body>
     <div class="overlay"></div>
     <div id="page-wrap"></div>
 
+  <!-- Botón para abrir el menú lateral -->
 <button  
   id="abrir-menu"  
   class="btn-opciones"  
@@ -191,7 +211,7 @@ transition: transform 0.6s ease;
   aria-controls="menu-lateral"  
   style="border: none; padding: 10px 15px; border-radius: 8px;">  
   <span class="opcion" aria-label="nombre de boton"></span>  
-  <span class="logoo" aria-label="Logo dentro del botón"></span>
+  <span class="logoo" aria-label="Logo dentro del botón"></span>  
   <p style="color:  #0075a3;">menu</p>
 </button>  
 
@@ -202,20 +222,20 @@ transition: transform 0.6s ease;
   aria-hidden="true"  
   hidden  
 >  
+  <!-- Submenú de Salidas (desplegable) -->  
+
   <!-- Resto del menú -->  
   <ul class="menu-list" style="list-style: none; padding: 0; margin: 0;">  
     <li><a href="index.html" class="menu-item" style="display: block; padding: 10px 12px; color:#333; text-decoration: none;">Quienes somos</a></li>  
     <li><a href="Galeria.html" class="menu-item" style="display: block; padding: 10px 12px; color:#333; text-decoration: none;">Galería</a></li>  
     <li><a href="contacto.html" class="menu-item" style="display: block; padding: 10px 12px; color:#333; text-decoration: none;">Contacto</a></li>  
-
-      <!-- Submenú de Salidas (desplegable) -->  
-    <div id="sub-menu-salidas" class="sub-menu-salidas" style="display: block; padding: 0px 0px; color:#333; text-decoration: none;">
+  <div id="sub-menu-salidas" class="sub-menu-salidas" style="padding: 0; margin: 0;">
   <button
     type="button"
     id="btn-salidas"
     aria-expanded="false"
     aria-controls="opciones-salidas"
-    style="display: block; width: 100%; padding: 10px; text-align: center; background-color: rgba(39, 59, 124, 0.788);  text-decoration: none; color: #9782f3; border-radius: 100% ;border-color:#ffffff">
+  style="display: block; width: 100%; padding: 10px 12px; text-align: center; background-color: rgba(39, 59, 124, 0.788);  text-decoration: none; color: #9782f3; border-radius: 100%  ;">
     Salidas
   </button>
 
@@ -232,7 +252,7 @@ transition: transform 0.6s ease;
 </a>
   </div>
 </div>
-  </ul>
+  </ul>  
   <div class="panel-content" aria-label="Contenido del panel" style="margin-top: 20px;">  
     
     <!-- contenido adicional opcional -->  
@@ -385,39 +405,65 @@ transition: transform 0.6s ease;
   };
 })();
 </script>
+
+
 <header class="site-header">
   <div class="logo-container">
     <img src="imagenes/logo_de_empresa_nube_blanca.jpeg" alt="Logo de la empresa" class="logo" />
   </div>
 </header>
-  <nav>
-    <h1></h1>
-    <p></p>
-    <p></p>
-  </nav>
-  <!-- Sección sobre mí -->
-  <div class="seccion">
-    <h2></h2>
-    <p></p>
-  </div>
-</header>
 
-<main class="contenedor">
 
-  <section class="intro">
-    <h1 class="titulo-seccion">¿Quiénes somos?</h1>
-      <hr class="separador" aria-label="Separador entre título y contenido" />
-          <p>En Nubes Blancas te invitamos a descubrir la montaña a través de experiencias de trekking seguras y apasionantes. Nuestro equipo de guías combina conocimiento y amor por la naturaleza para diseñar travesías adaptadas a todos los niveles. Creemos en caminar con propósito: disfrutar del paisaje, superar desafíos y conectar con lo esencial. Con prácticas responsables, cuidamos el entorno para dejar siempre una huella positiva. Viví la libertad de andar entre montañas y la magia de compartir el camino.</p>
-  </section>
+<h1>Champaqui clásico</h1>
 
-  <section class="intro">
-    <h1 class="titulo-seccion">¿Por qué elegirnos?</h1>
-      <hr class="separador" aria-label="Separador entre título y contenido" />
-         <p>En Nubes Blancas cada salida es más que un trekking: es una experiencia pensada para que disfrutes, aprendas y te conectes con la naturaleza. Contamos con guías capacitados, años de experiencia y un profundo respeto por la montaña. Ofrecemos asesoramiento personalizado, adaptando cada actividad a tus necesidades, y ponemos a disposición el equipo y la logística necesarios para que vivas la aventura con total confianza. Valoramos la cultura local, integrándola en cada recorrido para que también descubras la esencia de los lugares que visitamos. Diseñamos actividades para todos los niveles, priorizando siempre la seguridad y el cuidado del entorno. Porque creemos que lo importante no es solo llegar a la cumbre, sino vivir el camino.</p>
-  </section>
-</main>
+<H2>Día 1: Recepción y Trekking hacia el Refugio</H2>
+	<h3>•   Encuentro en Villa Alpina a las 10:00 hs.</h3>
+	<h3>•   Trekking de ~13 km (6–7 h) hasta el refugio (2 200 msnm).</h3>
+    <h3>•   Almuerzo volante durante el sendero.</h3>
+	<h3>•	Arribo al refugio entre 17 y 18 hs.</h3>
+	<h3>•	Merienda y cena en el refugio.</h3>
+
+<hr class="separador" aria-label="Separador entre título y contenido" />
+
+<h2>Día 2: Ascenso al Cerro Champaquí</h2>
+	<h3>•	Desayuno en el refugio y salida temprana.</h3>
+	<h3>•	Trekking de ~12 km (ida y vuelta, 6 h) hasta la cumbre del Cerro Champaquí (2 790 msnm).</h3>
+	<h3>•	Almuerzo en cumbre o en ruta, según condiciones climáticas.</h3>
+	<h3>•	Regreso al refugio; merienda y cena.</h3>
+
+<hr class="separador" aria-label="Separador entre título y contenido" />
+<h2>Día 3: Regreso a Villa Alpina</h2>
+	<h3>•	Desayuno en el refugio.</h3>
+	<h3>•	Trekking de ~13 km (6 h) de descenso hasta Villa Alpina.</h3>
+	<h3>•	Almuerzo volante en marcha.</h3>
+	<h3>•	Finalización de la actividad en Villa Alpina alrededor de las 15:00 hs.</h3>
+
+<hr class="separador" aria-label="Separador entre título y contenido" />
+<h2>Servicios Incluidos</h2>
+	<h3>•	Refugio de montaña tipo cabaña con baño, duchas y agua caliente las 24 hs.</h3>
+
+<h2>régimen de Comidas</h2>
+	<h3>•	Desayunos y meriendas: té, mate cocido, café, pan y dulce casero.</h3>
+	<h3>•	Almuerzo y cena: platos calientes en el refugio.</h3>
+	<h3>•	Dietas especiales (vegetariano, celíaco, etc.) sin costo extra.</h3>
+
+<h2> del Trekking</h2>
+	<h3>•	$300.000.- (valor sujeto a cambios, reserva y congela el precio)</h3>
+	<h3>•	Porteo de mochilas: $50 000</h3>
+	<h3>•	incluye traslado de villa general belgrano a villa alpina con un costo de 45.000 por persona </h3>
+
+
+<h2>Reservas</h2>
+	<h3>•	Se realizan con el 50% del valor de la excursión Alias:a definir </h3>
+
+<h2>Importante</h2>
+	<h3>•	El total del valor de la expedición debe estar cancelado al menos 48 hs antes del inicio.</h3>
+	<h3>•	En caso de no presentarse, se retendrá la seña y se evaluará la situación particular.</h3>
+	<h3>•	Cualquier gasto ocasionado por abandono voluntario o forzado de la expedición será asumido por el pasajero</h3>
+
+</body>
 <footer><p>Copyright 2025 Emir Alcorta
 Todos los derechos reservados.</p></footer>
-</body>
+</head>
 </html>
 
